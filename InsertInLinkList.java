@@ -1,11 +1,17 @@
+package linkList ;
 public class InsertInLinkList{
   Node head ;
 
   public int traverse(Node head){
     Node n = head ;
-    while(n != null){
-      System.out.println("Got The Data :" + n.data);
-      n = n.next;
+    if (n!=null) {
+      while(n != null){
+        System.out.println("Got The Data :" + n.data);
+        n = n.next;
+      }
+    }
+    else{
+      System.out.println("Empty List");
     }
     return 0;
   }
@@ -25,9 +31,10 @@ public class InsertInLinkList{
   public Node append(Node head , int data){
     Node n = head , temp;
     Node ofNewData = new Node(data);
-    while(n.next!=null){
-      n = n.next;
-    }
+      while(n.next!=null){
+        n = n.next;
+      }
+
     n.next = ofNewData ;
     n.next.next = null ;
     return head;
@@ -66,28 +73,28 @@ public class InsertInLinkList{
   }
 
 
-  public static void main(String[] args) {
-    InsertInLinkList obj = new InsertInLinkList();
-    obj.head = new Node(4);
-    Node second = new Node(3);
-    obj.head.next = second;
-    second.next = null;
-    obj.traverse(obj.head);
-    obj.head = obj.insertAfterKey(obj.head,3,45);
-    System.out.println("Data After AfterKey Insertion");
-    obj.traverse(obj.head);
-    obj.head = obj.insertAfterKey(obj.head,3,23);
-    System.out.println("Data After AfterKey Insertion");
-    obj.traverse(obj.head);
-    obj.head = obj.insertBeforeKey(obj.head,3,26);
-    System.out.println("Data After BeforeKey Insertion");
-    obj.traverse(obj.head);
-    obj.head = obj.insertHead(obj.head,29);
-    System.out.println("Data After Head Insertion");
-    obj.traverse(obj.head);
-    obj.head = obj.append(obj.head,41);
-    System.out.println("Data After Append Insertion");
-    obj.traverse(obj.head);
-
-  }
+  // public static void main(String[] args) {
+  //   InsertInLinkList obj = new InsertInLinkList();
+  //   obj.head = new Node(4);
+  //   Node second = new Node(3);
+  //   obj.head.next = second;
+  //   second.next = null;
+  //   obj.traverse(obj.head);
+  //   obj.head = obj.insertAfterKey(obj.head,3,45);
+  //   System.out.println("Data After AfterKey Insertion");
+  //   obj.traverse(obj.head);
+  //   obj.head = obj.insertAfterKey(obj.head,3,23);
+  //   System.out.println("Data After AfterKey Insertion");
+  //   obj.traverse(obj.head);
+  //   obj.head = obj.insertBeforeKey(obj.head,3,26);
+  //   System.out.println("Data After BeforeKey Insertion");
+  //   obj.traverse(obj.head);
+  //   obj.head = obj.insertHead(obj.head,29);
+  //   System.out.println("Data After Head Insertion");
+  //   obj.traverse(obj.head);
+  //   obj.head = obj.append(obj.head,41);
+  //   System.out.println("Data After Append Insertion");
+  //   obj.traverse(obj.head);
+  //
+  // }
 }
